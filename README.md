@@ -15,20 +15,43 @@ This tracker itself is the output of one of these "polished PRD prompts" transla
 
 ---
 
-## 📋 The Original Request (PRD)
-The assistant was given the following specialized persona and request:
+# PRD: AI Generalist Dashboard (Vanilla V1.2)
 
-**Problem:**
-"I have created a 30-day self study plan for becoming AI Generalist starting from March 9th, that is, yesterday till April 6th."
+```
+Problem
+I am executing a 30-day AI Generalist study sprint (March 9 - April 6). I need a lightweight, high-performance local dashboard to track my daily activities without the overhead of heavy frameworks. The system must store all curriculum data in a structured JSON file and use simple HTML/CSS/JS for the interface. It must automate progress tracking based on "Lab Notes" length and maintain the discipline of my schedule while enabling social media sharing.
 
-**Role:**
-"You are a seasoned game-based software developer with an extensive experience of more than 15 years in building scheduling webapps using Hooked model of Nir Eyal for clients in various time-bound sectors where tracking each milestone is critical while ensuring the involved workers feel motivated to keep working under tight time constraints."
+Role
+You are a Senior Frontend Developer and UI/UX Specialist. Your goal is to write clean, modular Vanilla JavaScript and CSS (via Tailwind CDN) to create a professional, game-inspired single-page application.
 
-**Deliverable:**
-"I want to build a small AI workflow automation tool that reminds me of each day's activity based on the date and time, lets me track my completion for each activity, and also lets me add any specific details to an activity like my learning, my experiments, or my observations and finally let's me see the overall picture of my daily and weekly progress so that I can track it and it also acts as my intrinsic motivation to continue on the journey."
+Deliverable
+Build a single-page web application using HTML5, Tailwind CSS, and Vanilla JavaScript, supported by a schedule.json file.
 
-**Updated PRD Prompt (For V1.2 Replication):**
-"I want to upgrade this tracker into a full professional dashboard. Give me a sidebar with navigation for Today's schedule, a full 30-day Roadmap table, and an Insights page that shows my streak and velocity. The behavior should be smarter—if I write at least 5 lines in my lab notes, the task should mark itself as completed automatically. I want to keep focus on today, so make sure I can't edit past dates by default, but let me toggle a 'catch-up' mode in a new Settings page. Finally, I need to use this data for LinkedIn, so add a button to export all my notes into a timestamped Markdown journal and another button in each activity to copy my notes formatted with a social media hook and hashtags. Keep the calendar sync button so I get my phone reminders."
+1. Data Structure (schedule.json)
+The schedule.json must contain an array of objects representing each time block from the 30-day plan. Use this exact format:
+- time: String ("9–11am", "11:30–1:30", or "3-4:30")
+- title: String (Category: e.g., "Deep Learning", "Deep Building", or "Trends & Outreach")
+- description: String (The specific task content from the .md file)
+- status: Boolean (Default: false)
+- notes: String (Default: "")
+
+2. Sidebar & Navigation
+- Today’s Focus: The default view, showing only the 3 tasks for the current date.
+- Full Roadmap: A scrollable table/grid of all 90 tasks with status indicators.
+- Insights: Displays "Current Streak" and "Total Completion %."
+- Settings: A toggle for "Catch-up Mode" to allow editing of past dates (which are read-only by default).
+
+3. Application Logic
+- Smart Completion: Automatically toggle status to true once the notes field reaches 5 lines of text (~250 characters).
+- Persistence: Use localStorage to save and load status and notes so data persists on refresh.
+- LinkedIn Export: A "Copy for Social" button for each task that formats notes with a day-specific hook (e.g., "Day X of my AI Generalist Journey") and hashtags like #AIGenerist.
+- Markdown Export: A button to download a timestamped .md file containing all tasks and your recorded notes.
+
+4. Implementation Instructions
+- Aesthetic: Use a sleek "Dark Mode" dashboard (Tailwind slate-900 background).
+- Schedule Population: Populate the JSON using the provided 30-day table.
+- Calendar Sync: Include a button to download a static .ics file for the 30-day schedule blocks.
+```
 
 ---
 
