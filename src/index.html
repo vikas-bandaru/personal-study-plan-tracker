@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Generalist Tracker | 30-Day Sprint</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar/Navigation -->
+        <nav class="sidebar">
+            <div class="logo">
+                <span class="icon">🚀</span>
+                <h1>AI Sprint</h1>
+            </div>
+            <div class="nav-links">
+                <button class="nav-item active" data-view="dashboard">
+                    <span class="icon">🏠</span> Dashboard
+                </button>
+                <button class="nav-item" data-view="roadmap">
+                    <span class="icon">🗺️</span> Roadmap
+                </button>
+                <button class="nav-item" data-view="insights">
+                    <span class="icon">📊</span> Insights
+                </button>
+                <button class="nav-item" data-view="settings">
+                    <span class="icon">⚙️</span> Settings
+                </button>
+            </div>
+            <div class="user-progress">
+                <div class="progress-label">Total Progress</div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="global-progress-bar"></div>
+                </div>
+                <div class="progress-text"><span id="completed-count">0</span> / 90 Tasks</div>
+            </div>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header>
+                <div class="header-content">
+                    <h2 id="view-title">Dashboard</h2>
+                    <p id="current-date-display">March 10, 2026 • Day 2</p>
+                </div>
+                <div class="header-actions">
+                    <button id="sync-calendar" class="btn secondary">
+                        <span class="icon">📅</span> Sync to Calendar
+                    </button>
+                    <div class="theme-toggle">
+                        <span class="icon">🌙</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard View -->
+            <section id="dashboard-view" class="view-section active">
+                <!-- Current Task Hero (Trigger) -->
+                <div class="hero-card" id="current-task-hero">
+                    <div class="hero-label">CURRENTLY FOCUSING ON</div>
+                    <div class="hero-main">
+                        <div class="hero-details">
+                            <h3 id="hero-task-title">Deep Learning</h3>
+                            <p id="hero-task-desc">Scan LinkedIn for how founders/PMs describe AI problems...</p>
+                            <div class="time-tag">
+                                <span class="icon">🕒</span> <span id="hero-task-time">09:00 - 11:00</span>
+                            </div>
+                        </div>
+                        <div class="hero-action">
+                            <button id="complete-current" class="btn primary">Mark as Completed</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Daily Timeline -->
+                <div class="daily-schedule">
+                    <div class="section-header">
+                        <h3>Today's Plan</h3>
+                    </div>
+                    <div class="activities-grid" id="daily-activities">
+                        <!-- Activity Cards Will Be Injected Here -->
+                    </div>
+                </div>
+
+                <!-- Weekly Glimpse (Variable Reward) -->
+                <div class="weekly-streak">
+                  <div class="section-header">
+                    <h3>30-Day Grid</h3>
+                  </div>
+                  <div class="grid-30" id="progress-grid">
+                    <!-- 30 nodes injected here -->
+                  </div>
+                </div>
+            </section>
+
+            <!-- Other Views (Roadmap, Insights, Settings) placeholder... -->
+            <section id="roadmap-view" class="view-section">
+                <!-- Detailed table view of all 30 days -->
+                <div class="roadmap-container" id="full-roadmap"></div>
+            </section>
+        </main>
+
+        <!-- Lab Notes Modal (Investment) -->
+        <div id="activity-modal" class="modal">
+            <div class="modal-content">
+                <header class="modal-header">
+                    <h3 id="modal-activity-title">Activity Title</h3>
+                    <button class="close-modal">&times;</button>
+                </header>
+                <div class="modal-body">
+                    <p id="modal-activity-desc" class="description"></p>
+                    <div class="notes-area">
+                        <label for="activity-notes">Lab Notes (Learning, Experiments, Observations)</label>
+                        <textarea id="activity-notes" placeholder="What did you learn today? What experiments did you run? Any interesting observations?"></textarea>
+                    </div>
+                </div>
+                <footer class="modal-footer">
+                    <button id="save-notes" class="btn primary">Save Notes & Close</button>
+                </footer>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>

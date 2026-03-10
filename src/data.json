@@ -1,0 +1,782 @@
+[
+    {
+        "day": 1,
+        "activities": [
+            {
+                "time": "09:00 - 11:00",
+                "title": "Deep Learning",
+                "description": "Read \u201cIntro to Gen AI \\& Model Landscape\u201d + model matrix; take notes on each model\u2019s strengths.[^1]",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "11:30 - 13:30",
+                "title": "Deep Building",
+                "description": "Write a 1\u2011page doc: your lane (AI Generalist for Education) + 3\u20135 problem types you want to solve.",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "15:00 - 16:30",
+                "title": "Trends & Outreach",
+                "description": "Watch 1\u20132 recent AI\u2011in\u2011education talks or posts; capture 5 insights; post a short LinkedIn note on why you\u2019re doing this 30\u2011day sprint.",
+                "status": "pending",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "day": 2,
+        "activities": [
+            {
+                "time": "09:00 - 11:00",
+                "title": "Deep Learning",
+                "description": "Study PRD method section; rewrite 3 of your old prompts using full PRD (Problem, Role, Deliverable).[^1]",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "11:30 - 13:30",
+                "title": "Deep Building",
+                "description": "Turn 3\u20135 real tasks (resume tweak, workshop design, email, etc.) into polished PRD prompts; run them on an LLM and compare outputs.",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "15:00 - 16:30",
+                "title": "Trends & Outreach",
+                "description": "Scan LinkedIn for how founders/PMs describe AI problems; note 3\u20135 common patterns; comment meaningfully on 1\u20132 posts.",
+                "status": "pending",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "day": 3,
+        "activities": [
+            {
+                "time": "09:00 - 11:00",
+                "title": "Deep Learning",
+                "description": "Revisit model matrix; learn when to choose reasoning vs coding vs multimodal vs local models.[^1]",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "11:30 - 13:30",
+                "title": "Deep Building",
+                "description": "Build a small \u201cModel Selector\u201d cheat sheet (table) mapping your 5 problem types to primary and backup models.",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "15:00 - 16:30",
+                "title": "Trends & Outreach",
+                "description": "Explore 2\u20133 job postings where model choice matters; note required tools in your journal; connect with 2 people in such roles.",
+                "status": "pending",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "day": 4,
+        "activities": [
+            {
+                "time": "09:00 - 11:00",
+                "title": "Deep Learning",
+                "description": "Review your past posts (10\u201320); read an article/video on \u201ccontent DNA\u201d or voice consistency.",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "11:30 - 13:30",
+                "title": "Deep Building",
+                "description": "Compile posts into one doc; run a \u201cContent DNA\u201d analysis prompt on them; highlight key style traits from the output.",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "15:00 - 16:30",
+                "title": "Trends & Outreach",
+                "description": "Share 1 post explaining what you learned about your writing style; DM 1\u20132 creator/educator contacts asking for feedback.",
+                "status": "pending",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "day": 5,
+        "activities": [
+            {
+                "time": "09:00 - 11:00",
+                "title": "Deep Learning",
+                "description": "Re\u2011read the Content DNA analysis; learn how to turn style guidelines into prompts.[^1]",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "11:30 - 13:30",
+                "title": "Deep Building",
+                "description": "Draft your Master Markdown Style Prompt; test it by generating 3 LinkedIn posts in your voice on 3 topics.",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "15:00 - 16:30",
+                "title": "Trends & Outreach",
+                "description": "Publish 1 AI\u2011drafted, you\u2011edited post; observe engagement and note what worked; log learnings in Obsidian/Notion.",
+                "status": "pending",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "day": 6,
+        "activities": [
+            {
+                "time": "09:00 - 11:00",
+                "title": "Deep Learning",
+                "description": "Review docs/tutorial for Custom GPTs/Gems or similar zero\u2011code assistants.",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "11:30 - 13:30",
+                "title": "Deep Building",
+                "description": "Implement the Viral Post Generator assistant with your Master Prompt; run at least 5 test generations and refine instructions.[^1]",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "15:00 - 16:30",
+                "title": "Trends & Outreach",
+                "description": "Share a behind\u2011the\u2011scenes post or short reel: \u201cI built my own AI writing assistant today\u201d; connect with 3 AI+content people.",
+                "status": "pending",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "day": 7,
+        "activities": [
+            {
+                "time": "09:00 - 11:00",
+                "title": "Deep Learning",
+                "description": "Reflect on Week 1: re\u2011read your notes on PRD and model selection; identify gaps.",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "11:30 - 13:30",
+                "title": "Deep Building",
+                "description": "Record a 5\u201310 min demo (screen recording) of your assistant; draft a short internal case study (problem, solution, impact).",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "15:00 - 16:30",
+                "title": "Trends & Outreach",
+                "description": "Publish a weekly recap post; update your Notion/Obsidian \u201cRoadmap\u201d page with Week\u20111 outcomes and next\u2011week focus.",
+                "status": "pending",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "day": 8,
+        "activities": [
+            {
+                "time": "09:00 - 11:00",
+                "title": "Deep Learning",
+                "description": "Study \u201cRAG Architecture Simplified\u201d; watch 1 short RAG explainer.[^1]",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "11:30 - 13:30",
+                "title": "Deep Building",
+                "description": "Write your own explanation of chunking, embeddings, vector DB, retrieval; sketch RAG flow on paper.",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "15:00 - 16:30",
+                "title": "Trends & Outreach",
+                "description": "Read 3 RAG\u2011related posts/threads; save 2\u20133 good diagrams/examples into your notes; comment on 1 post.",
+                "status": "pending",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "day": 9,
+        "activities": [
+            {
+                "time": "09:00 - 11:00",
+                "title": "Deep Learning",
+                "description": "Review your own teaching/AI docs; think about where search currently hurts.",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "11:30 - 13:30",
+                "title": "Deep Building",
+                "description": "Choose a narrow RAG use\u2011case (e.g., querying your C/Java notes); assemble 10\u201320 source docs into a folder.",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "15:00 - 16:30",
+                "title": "Trends & Outreach",
+                "description": "Look at 3\u20135 RAG job descriptions; list recurring tools (LangChain, Pinecone, etc.) to drive your future learning.",
+                "status": "pending",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "day": 10,
+        "activities": [
+            {
+                "time": "09:00 - 11:00",
+                "title": "Deep Learning",
+                "description": "Skim a tutorial on your chosen RAG stack (LangChain/LlamaIndex/etc.).",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "11:30 - 13:30",
+                "title": "Deep Building",
+                "description": "Implement minimal RAG over your chosen corpus; test at least 10 queries and log good/bad behaviours.",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "15:00 - 16:30",
+                "title": "Trends & Outreach",
+                "description": "Share a small screenshot/story on LinkedIn: \u201cTurned my old teaching notes into a searchable AI assistant today.\u201d",
+                "status": "pending",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "day": 11,
+        "activities": [
+            {
+                "time": "09:00 - 11:00",
+                "title": "Deep Learning",
+                "description": "Read \u201cUnderstanding MCP: USB\u2011C of AI\u201d; understand online vs offline integrations.[^1]",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "11:30 - 13:30",
+                "title": "Deep Building",
+                "description": "Map 2\u20133 tools you\u2019d like to connect (e.g., GDrive folder for your teaching docs); write a PRD for your MCP use\u2011case.",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "15:00 - 16:30",
+                "title": "Trends & Outreach",
+                "description": "Observe how companies talk about MCP/\u201ctool\u2011calling\u201d/agents; capture 5 phrases to reuse in your portfolio and CV.",
+                "status": "pending",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "day": 12,
+        "activities": [
+            {
+                "time": "09:00 - 11:00",
+                "title": "Deep Learning",
+                "description": "Review MCP connector docs from the repo mentioned in the roadmap.[^1]",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "11:30 - 13:30",
+                "title": "Deep Building",
+                "description": "Implement one basic MCP integration (e.g., Claude + Google Drive or local folder); run 5\u201310 queries with source citations.",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "15:00 - 16:30",
+                "title": "Trends & Outreach",
+                "description": "Write a short public note: \u201cWhat excited me about MCP today\u201d; connect with 2 people working on agents/tool\u2011use.",
+                "status": "pending",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "day": 13,
+        "activities": [
+            {
+                "time": "09:00 - 11:00",
+                "title": "Deep Learning",
+                "description": "Re\u2011read your RAG + MCP notes; identify how they complement each other.",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "11:30 - 13:30",
+                "title": "Deep Building",
+                "description": "Draft a 1\u20132 page case study for your \u201cAI Knowledge Assistant\u201d (problem, architecture, screenshots, future work).",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "15:00 - 16:30",
+                "title": "Trends & Outreach",
+                "description": "Turn the case study into a short carousel or post; share it and DM it to 1\u20132 people who might give specific feedback.",
+                "status": "pending",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "day": 14,
+        "activities": [
+            {
+                "time": "09:00 - 11:00",
+                "title": "Deep Learning",
+                "description": "Week\u20112 review: summarise what you really understand vs what is still fuzzy (RAG, MCP).",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "11:30 - 13:30",
+                "title": "Deep Building",
+                "description": "Record a 5\u201310 min demo of your assistant in action; add link + notes to your portfolio/Notion.",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "15:00 - 16:30",
+                "title": "Trends & Outreach",
+                "description": "Publish a week\u20112 recap; list 3 \u201cnext experiments\u201d for yourself in RAG/MCP; connect with 3 new edtech/AI contacts.",
+                "status": "pending",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "day": 15,
+        "activities": [
+            {
+                "time": "09:00 - 11:00",
+                "title": "Deep Learning",
+                "description": "Study \u201cProduction Pipeline\u201d + \u201cSeamless Ad\u201d sections in detail.[^1]",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "11:30 - 13:30",
+                "title": "Deep Building",
+                "description": "Pick a product/story (your AI\u2011for\u2011Educators brand or a fictional tool) and outline the core message + CTA.",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "15:00 - 16:30",
+                "title": "Trends & Outreach",
+                "description": "Watch 2\u20133 short case studies of AI\u2011produced content ads; note what makes them engaging.",
+                "status": "pending",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "day": 16,
+        "activities": [
+            {
+                "time": "09:00 - 11:00",
+                "title": "Deep Learning",
+                "description": "Learn basics of scriptwriting for short videos (hook\u2011problem\u2011solution\u2011CTA).",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "11:30 - 13:30",
+                "title": "Deep Building",
+                "description": "Use an LLM to draft a 30s script + 5\u20137 shot storyboard; iterate until you\u2019re happy.",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "15:00 - 16:30",
+                "title": "Trends & Outreach",
+                "description": "Share a post: \u201cI\u2019m planning a fully AI\u2011produced explainer video this week\u2014here\u2019s the storyboard.\u201d",
+                "status": "pending",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "day": 17,
+        "activities": [
+            {
+                "time": "09:00 - 11:00",
+                "title": "Deep Learning",
+                "description": "Read a quick guide to Midjourney/Leonardo prompting for consistency.[^1]",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "11:30 - 13:30",
+                "title": "Deep Building",
+                "description": "Generate storyboard images (5\u20137) with consistent character/visual style; refine prompts and save best versions.",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "15:00 - 16:30",
+                "title": "Trends & Outreach",
+                "description": "Study 5 trending AI\u2011generated images/videos; collect prompt snippets or techniques to reuse.",
+                "status": "pending",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "day": 18,
+        "activities": [
+            {
+                "time": "09:00 - 11:00",
+                "title": "Deep Learning",
+                "description": "Learn basics of a video AI tool (Kling/Luma/Runway) or transitions in VN/CapCut.",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "11:30 - 13:30",
+                "title": "Deep Building",
+                "description": "Turn your images into a rough 15\u201330s video; focus first on sequence and pacing.",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "15:00 - 16:30",
+                "title": "Trends & Outreach",
+                "description": "Post a WIP clip or storyboard still; ask followers which version resonates more (iterative feedback).",
+                "status": "pending",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "day": 19,
+        "activities": [
+            {
+                "time": "09:00 - 11:00",
+                "title": "Deep Learning",
+                "description": "Read about voice\u2011over best practices; learn ElevenLabs (or similar) workflow.[^1]",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "11:30 - 13:30",
+                "title": "Deep Building",
+                "description": "Generate and sync voiceover with your video; add captions, titles, minimal branding.",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "15:00 - 16:30",
+                "title": "Trends & Outreach",
+                "description": "Share the near\u2011final video privately with 2\u20133 trusted contacts; collect feedback, log insights in notes.",
+                "status": "pending",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "day": 20,
+        "activities": [
+            {
+                "time": "09:00 - 11:00",
+                "title": "Deep Learning",
+                "description": "Analyse feedback; watch 1 video on improving pacing/engagement in short\u2011form content.",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "11:30 - 13:30",
+                "title": "Deep Building",
+                "description": "Publish the final version publicly; write a thread or post breaking down your AI\u2011only pipeline.",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "15:00 - 16:30",
+                "title": "Trends & Outreach",
+                "description": "Engage deeply with comments/DMs; reach out to 2\u20133 people in AI marketing/edtech content about collaboration.",
+                "status": "pending",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "day": 21,
+        "activities": [
+            {
+                "time": "09:00 - 11:00",
+                "title": "Deep Learning",
+                "description": "Week\u20113 review: what did multimodal tools change about your view of \u201cAI work\u201d?",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "11:30 - 13:30",
+                "title": "Deep Building",
+                "description": "Turn the whole process into a written case study + add video + notes to portfolio.",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "15:00 - 16:30",
+                "title": "Trends & Outreach",
+                "description": "Publish a recap focused on \u201cOne\u2011person AI agency for educators\u201d; connect with 3 people interested in similar pipelines.",
+                "status": "pending",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "day": 22,
+        "activities": [
+            {
+                "time": "09:00 - 11:00",
+                "title": "Deep Learning",
+                "description": "Study \u201cChatbots vs Agents\u201d + \u201cVibe Coding Stack.\u201d[^1]",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "11:30 - 13:30",
+                "title": "Deep Building",
+                "description": "Install/setup your chosen tools (Cursor, Bolt.new/Lovable, CrewAI templates); do 1\u20132 tiny test runs.",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "15:00 - 16:30",
+                "title": "Trends & Outreach",
+                "description": "Watch 1\u20132 talks/threads on agents in production; note what \u201cgood\u201d agent behaviour looks like.",
+                "status": "pending",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "day": 23,
+        "activities": [
+            {
+                "time": "09:00 - 11:00",
+                "title": "Deep Learning",
+                "description": "Revisit PRD with an \u201cagent mindset\u201d: how to define roles, tools, memory.",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "11:30 - 13:30",
+                "title": "Deep Building",
+                "description": "Write a detailed PRD for your micro\u2011SaaS/agent use\u2011case (e.g., lesson\u2011plan generator or feedback summariser).",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "15:00 - 16:30",
+                "title": "Trends & Outreach",
+                "description": "Share a \u201cdesign in public\u201d post about the problem you want the agent to solve; invite suggestions.",
+                "status": "pending",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "day": 24,
+        "activities": [
+            {
+                "time": "09:00 - 11:00",
+                "title": "Deep Learning",
+                "description": "Learn fundamentals of Bolt.new / Lovable.dev portfolio generation.[^1]",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "11:30 - 13:30",
+                "title": "Deep Building",
+                "description": "Generate your personal landing page from your CV + project list; customise copy and sections by hand.",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "15:00 - 16:30",
+                "title": "Trends & Outreach",
+                "description": "Share a screenshot of your new site; ask for feedback on wording/positioning from your network.",
+                "status": "pending",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "day": 25,
+        "activities": [
+            {
+                "time": "09:00 - 11:00",
+                "title": "Deep Learning",
+                "description": "Read basics of CrewAI (or similar) from the repo docs.[^1]",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "11:30 - 13:30",
+                "title": "Deep Building",
+                "description": "Implement a minimal 2\u2011agent workflow (e.g., research + summarise AI\u2011in\u2011education topic) that writes to a file/log.",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "15:00 - 16:30",
+                "title": "Trends & Outreach",
+                "description": "Look at 2\u20133 agent\u2011related job descriptions; capture the exact language for responsibilities and tools.",
+                "status": "pending",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "day": 26,
+        "activities": [
+            {
+                "time": "09:00 - 11:00",
+                "title": "Deep Learning",
+                "description": "Study logs/outputs from your agent run; think about failure modes and safety.",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "11:30 - 13:30",
+                "title": "Deep Building",
+                "description": "Improve prompts, add better logging/instructions; get the workflow to run reliably on 2\u20133 different topics.",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "15:00 - 16:30",
+                "title": "Trends & Outreach",
+                "description": "Draft a short LinkedIn post on \u201cWhat surprised me about AI agents this week.\u201d",
+                "status": "pending",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "day": 27,
+        "activities": [
+            {
+                "time": "09:00 - 11:00",
+                "title": "Deep Learning",
+                "description": "Learn high\u2011level deployment options (even if you don\u2019t fully deploy yet).",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "11:30 - 13:30",
+                "title": "Deep Building",
+                "description": "Package the workflow as \u201cAI Research Assistant for AI\u2011in\u2011Education Workshops\u201d; write quick docs (how to use, limitations).",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "15:00 - 16:30",
+                "title": "Trends & Outreach",
+                "description": "Share a short demo clip; tag or DM 1\u20132 people who run FDPs/workshops and ask: \u201cWould this be useful?\u201d",
+                "status": "pending",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "day": 28,
+        "activities": [
+            {
+                "time": "09:00 - 11:00",
+                "title": "Deep Learning",
+                "description": "Global review: skim all notes from Days 1\u201327; identify your strongest patterns.",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "11:30 - 13:30",
+                "title": "Deep Building",
+                "description": "Consolidate portfolio: 4 named projects, links to demos, landing page updated; ensure everything is coherent.",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "15:00 - 16:30",
+                "title": "Trends & Outreach",
+                "description": "Announce: \u201cMy AI Generalist for Education portfolio is live\u201d; share link and invite conversations.",
+                "status": "pending",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "day": 29,
+        "activities": [
+            {
+                "time": "09:00 - 11:00",
+                "title": "Deep Learning",
+                "description": "Study 10\u201315 target job postings (edtech, AI generalist, AI consultant).[^3][^4][^5][^6][^7][^8][^9][^10][^11][^12][^13]",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "11:30 - 13:30",
+                "title": "Deep Building",
+                "description": "Map each target role to your projects (which demo proves what?); tailor 2\u20133 short \u201cWhy me\u201d bullets per role.",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "15:00 - 16:30",
+                "title": "Trends & Outreach",
+                "description": "Start personalised outreach (10\u201315 messages) to hiring managers/founders with a link to your best 1\u20132 demos.",
+                "status": "pending",
+                "notes": ""
+            }
+        ]
+    },
+    {
+        "day": 30,
+        "activities": [
+            {
+                "time": "09:00 - 11:00",
+                "title": "Deep Learning",
+                "description": "Meta\u2011reflection: write 1\u20132 pages on \u201cHow my mindset/skills changed from Day 1 to Day 30.\u201d",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "11:30 - 13:30",
+                "title": "Deep Building",
+                "description": "Attempt to rebuild your tracking system / assistant with your new RAG/agent knowledge; note differences from this first version.",
+                "status": "pending",
+                "notes": ""
+            },
+            {
+                "time": "15:00 - 16:30",
+                "title": "Trends & Outreach",
+                "description": "Record or script your vlog: \u201cBefore vs After 30 Days as an AI Generalist\u201d; share a teaser post and schedule full vlog.",
+                "status": "pending",
+                "notes": ""
+            }
+        ]
+    }
+]
