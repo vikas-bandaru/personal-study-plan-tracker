@@ -5,12 +5,17 @@ let state = {
     days: [],
     completions: JSON.parse(localStorage.getItem('study_completions')) || {},
     notes: JSON.parse(localStorage.getItem('study_notes')) || {},
+    settings: JSON.parse(localStorage.getItem('study_settings')) || {
+        allowPastEditing: false
+    },
     currentDay: 1,
     activeView: 'dashboard'
 };
 
 // Initialize App
 async function init() {
+    // Apply initial body attributes for CSS
+    document.body.setAttribute('data-past-editing', state.settings.allowPastEditing);
     try {
         const response = await fetch('data.json');
         state.days = await response.json();
@@ -63,6 +68,26 @@ function setupEventListeners() {
 
     // Sync Calendar
     document.getElementById('sync-calendar').addEventListener('click', syncToCalendar);
+    
+    // Export Journal
+    document.getElementById('export-journal').addEventListener('click', exportJournal);
+
+    // Settings
+    const pastToggle = document.getElementById('toggle-past-editing');
+    pastToggle.checked = state.settings.allowPastEditing;
+    pastToggle.onchange = (e) => {
+        state.settings.allowPastEditing = e.target.checked;
+        localStorage.setItem('study_settings', JSON.stringify(state.settings));
+        document.body.setAttribute('data-past-editing', e.target.checked);
+        renderProgressGrid(); // Refresh grid to show/hide clickable state
+    };
+
+    document.getElementById('reset-all').onclick = () => {
+        if (confirm("Are you sure you want to reset all progress? This cannot be undone.")) {
+            localStorage.clear();
+            location.reload();
+        }
+    };
 }
 
 function renderDashboard() {
@@ -154,6 +179,22 @@ function updateCurrentActivity() {
 }
 
 function openActivityModal(activity, id) {
+    // Security Check: If it's a past day and editing is disabled
+    const dayOfActivity = parseInt(id.split('-')[1]);
+    const realToday = calculateRealCurrentDay();
+    const isActuallyPast = realToday > dayOfActivity;
+    const isFuture = dayOfActivity > realToday;
+    
+    if (isFuture) {
+        alert("You cannot edit future tasks. Stay focused on today!");
+        return;
+    }
+
+    if (isActuallyPast && !state.settings.allowPastEditing) {
+        alert("Editing past activities is disabled in Settings.");
+        return;
+    }
+
     const modal = document.getElementById('activity-modal');
     document.getElementById('modal-activity-title').textContent = activity.title;
     document.getElementById('modal-activity-desc').textContent = activity.description;
@@ -162,16 +203,52 @@ function openActivityModal(activity, id) {
     textarea.value = state.notes[id] || '';
     
     document.getElementById('save-notes').onclick = () => {
-        state.notes[id] = textarea.value;
+        const text = textarea.value;
+        state.notes[id] = text;
         localStorage.setItem('study_notes', JSON.stringify(state.notes));
+        
+        // Auto-completion logic: 5 lines of content
+        const lines = text.split('\n').filter(line => line.trim().length > 0);
+        if (lines.length >= 5 && !state.completions[id]) {
+            state.completions[id] = true;
+            localStorage.setItem('study_completions', JSON.stringify(state.completions));
+            updateGlobalProgress();
+            renderProgressGrid();
+        }
+
         modal.classList.remove('active');
-        renderDashboard(); // Update view
+        renderDashboard(); 
+    };
+
+    // Copy to Social
+    document.getElementById('copy-social').onclick = () => {
+        const text = textarea.value;
+        const socialText = `🚀 AI Generalist Sprint - Day ${dayOfActivity}\n` +
+                          `📝 Activity: ${activity.title}\n\n` +
+                          `${text}\n\n` +
+                          `#AIGeneralist #LearningInPublic #AIStudyTracker`;
+        
+        navigator.clipboard.writeText(socialText).then(() => {
+            const originalText = document.getElementById('copy-social').innerHTML;
+            document.getElementById('copy-social').innerHTML = 'Copied! ✅';
+            setTimeout(() => {
+                document.getElementById('copy-social').innerHTML = originalText;
+            }, 2000);
+        });
     };
 
     modal.classList.add('active');
 }
 
 function toggleCompletion(id) {
+    const dayOfActivity = parseInt(id.split('-')[1]);
+    const isActuallyPast = calculateRealCurrentDay() > dayOfActivity;
+
+    if (isActuallyPast && !state.settings.allowPastEditing) {
+        alert("Updating past activities is disabled in Settings.");
+        return;
+    }
+
     state.completions[id] = !state.completions[id];
     localStorage.setItem('study_completions', JSON.stringify(state.completions));
     renderDashboard();
@@ -184,24 +261,64 @@ function renderProgressGrid() {
     const grid = document.getElementById('progress-grid');
     grid.innerHTML = '';
     
+    const realToday = calculateRealCurrentDay();
+
     for (let i = 1; i <= 30; i++) {
         const node = document.createElement('div');
         node.className = 'node';
         node.dataset.day = i;
         if (i === state.currentDay) node.classList.add('active');
         
+        const isPast = i < realToday;
+        const isFuture = i > realToday;
+        
+        if (isPast) node.classList.add('past');
+        if (isFuture) node.classList.add('future');
+
         // A day is "completed" if all 3 activities are done
         const isDayDone = [0, 1, 2].every(idx => state.completions[`day-${i}-act-${idx}`]);
         if (isDayDone) node.classList.add('completed');
         
         node.onclick = () => {
+            // Behavioral fix: Only allow clicking if:
+            // 1. It is the real current day
+            // 2. OR it is a past day AND settings allow it
+            
+            if (isFuture) {
+                // Strictly block future
+                return;
+            }
+
+            if (isPast && !state.settings.allowPastEditing) {
+                // Block past if setting is off
+                return;
+            }
+            
             state.currentDay = i;
-            calculateCurrentDay(); // just to update text
+            // Update UI
+            document.getElementById('current-date-display').textContent = 
+                `Viewing: March ${8 + i}, 2026 • Day ${i}`;
+            
             renderDashboard();
             renderProgressGrid();
+            
+            // If they click away from the dashboard view, switch them back to see the day
+            if (state.activeView !== 'dashboard') {
+                switchView('dashboard');
+                document.querySelector('.nav-item[data-view="dashboard"]').click();
+            }
         };
         grid.appendChild(node);
     }
+}
+
+// Helper to get real current day regardless of viewed day
+function calculateRealCurrentDay() {
+    const today = new Date();
+    if (today < START_DATE) return 1;
+    const diffTime = Math.abs(today - START_DATE);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+    return Math.min(diffDays, 30);
 }
 
 function updateGlobalProgress() {
@@ -211,6 +328,56 @@ function updateGlobalProgress() {
     
     document.getElementById('global-progress-bar').style.width = `${percent}%`;
     document.getElementById('completed-count').textContent = completed;
+}
+
+function exportJournal() {
+    let md = `# 📓 AI Generalist - 30 Day Lab Journal\n\n`;
+    md += `Generated on: ${new Date().toLocaleDateString()}\n\n`;
+    md += `--- \n\n`;
+
+    let hasNotes = false;
+
+    state.days.forEach(day => {
+        let dayNotes = "";
+        day.activities.forEach((act, idx) => {
+            const id = `day-${day.day}-act-${idx}`;
+            const noteContent = state.notes[id] || "";
+            if (noteContent.trim()) {
+                dayNotes += `### ${act.title} - ${act.time}\n`;
+                dayNotes += `> ${act.description.split(';')[0]}\n\n`;
+                dayNotes += `${noteContent}\n\n`;
+                dayNotes += `---\n\n`;
+            }
+        });
+
+        if (dayNotes) {
+            md += `## 📅 Day ${day.day}\n\n` + dayNotes;
+            hasNotes = true;
+        }
+    });
+
+    if (!hasNotes) {
+        alert("You haven't written any lab notes yet! Start documenting your 11:30 - 13:30 build session.");
+        return;
+    }
+
+    const blob = new Blob([md], { type: 'text/markdown;charset=utf-8' });
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    
+    // Feature enhancement: Add timestamp to filename so multiple exports in one day are distinct
+    const now = new Date();
+    const timeStamp = `${String(now.getHours()).padStart(2, '0')}${String(now.getMinutes()).padStart(2, '0')}`;
+    const dateStamp = now.toISOString().split('T')[0];
+    
+    link.href = url;
+    link.setAttribute('download', `AIG_Sprint_Journal_${dateStamp}_${timeStamp}.md`);
+    document.body.appendChild(link);
+    link.click();
+    
+    // Cleanup
+    document.body.removeChild(link);
+    setTimeout(() => window.URL.revokeObjectURL(url), 100);
 }
 
 function syncToCalendar() {
@@ -268,6 +435,65 @@ function switchView(view) {
     document.querySelectorAll('.view-section').forEach(s => s.classList.remove('active'));
     const section = document.getElementById(`${view}-view`);
     if (section) section.classList.add('active');
+
+    // Load content for specific views
+    if (view === 'roadmap') renderRoadmapTable();
+    if (view === 'insights') renderInsights();
+}
+
+function renderRoadmapTable() {
+    const tbody = document.getElementById('roadmap-table-body');
+    tbody.innerHTML = '';
+    
+    state.days.forEach(day => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+            <td><strong>Day ${day.day}</strong></td>
+            <td>${day.activities[0].description}</td>
+            <td>${day.activities[1].description}</td>
+            <td>${day.activities[2].description}</td>
+        `;
+        tbody.appendChild(tr);
+    });
+}
+
+function renderInsights() {
+    // Update Stats
+    const totalCompletions = Object.values(state.completions).filter(v => v).length;
+    const totalNotes = Object.keys(state.notes).filter(k => state.notes[k].trim()).length;
+    
+    document.getElementById('stat-notes-count').textContent = totalNotes;
+    document.getElementById('stat-velocity').textContent = Math.round((totalCompletions / 90) * 100) + "%";
+    
+    // Calculate streak (consecutive completed days)
+    let streak = 0;
+    for (let i = state.currentDay; i >= 1; i--) {
+        const isDayDone = [0, 1, 2].every(idx => state.completions[`day-${i}-act-${idx}`]);
+        if (isDayDone) streak++;
+        else if (i < state.currentDay) break; // break only if we missed a past day
+    }
+    document.getElementById('stat-streak').textContent = streak + " Days";
+
+    // Show recent notes
+    const recentList = document.getElementById('recent-notes-list');
+    recentList.innerHTML = '';
+    
+    const noteKeys = Object.keys(state.notes).reverse().slice(0, 5);
+    noteKeys.forEach(key => {
+        if (!state.notes[key].trim()) return;
+        
+        const [dayStr, actStr] = key.split('-act-');
+        const dayNum = dayStr.split('-')[1];
+        const actData = state.days[dayNum-1].activities[actStr];
+
+        const div = document.createElement('div');
+        div.className = 'small-note-card';
+        div.innerHTML = `
+            <h5>Day ${dayNum} - ${actData.title}</h5>
+            <p>${state.notes[key]}</p>
+        `;
+        recentList.appendChild(div);
+    });
 }
 
 init();
