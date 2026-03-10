@@ -27,18 +27,36 @@ The assistant was given the following specialized persona and request:
 **Deliverable:**
 "I want to build a small AI workflow automation tool that reminds me of each day's activity based on the date and time, lets me track my completion for each activity, and also lets me add any specific details to an activity like my learning, my experiments, or my observations and finally let's me see the overall picture of my daily and weekly progress so that I can track it and it also acts as my intrinsic motivation to continue on the journey."
 
+**Updated PRD Prompt (For V1.2 Replication):**
+"I want to upgrade this tracker into a full professional dashboard. Give me a sidebar with navigation for Today's schedule, a full 30-day Roadmap table, and an Insights page that shows my streak and velocity. The behavior should be smarter—if I write at least 5 lines in my lab notes, the task should mark itself as completed automatically. I want to keep focus on today, so make sure I can't edit past dates by default, but let me toggle a 'catch-up' mode in a new Settings page. Finally, I need to use this data for LinkedIn, so add a button to export all my notes into a timestamped Markdown journal and another button in each activity to copy my notes formatted with a social media hook and hashtags. Keep the calendar sync button so I get my phone reminders."
+
 ---
 
-## ✨ Features
-- **Dynamic Hero (Trigger)**: Automatically highlights the current study session based on your system clock.
-- **Hooked Design System**: Premium dark mode aesthetics with neon "Variable Reward" progress grids.
-- **Calendar Sync**: Integrated `.ics` generation to sync your entire 30-day plan into **Google Calendar** for native notifications.
-- **Lab Notes (Investment)**: Record your learning, experiments, and observations directly against each study task.
-- **Local Persistence**: All tracking and notes are stored locally in your browser.
+## ✨ Latest Features (V1.2)
+
+### 📊 Advanced Analytics & Navigation
+- **Multi-View Dashboard**: Switch seamlessly between **Dashboard**, **Roadmap**, **Insights**, and **Settings**.
+- **The "Hot" Roadmap**: A scrollable 30-day curriculum table to see your entire trajectory.
+- **Intrinsic Motivation Hub**: Track your **Streak**, **Learning Velocity**, and revisit **Recent Lab Notes** in the Insights view.
+
+### 🧠 Intelligent Automation ("Investment" Loop)
+- **Auto-Completion**: Write a detailed lab note of **5+ lines**, and the system automatically marks the activity as **Completed** ✅. It rewards deep reflection over simple ticking.
+- **Dynamic Trigger**: The dashboard hero card automatically prioritizes your current time-block based on the system clock.
+
+### 🛡️ Focus & Security
+- **Strict Future Lockdown**: Future dates are visually dimmed and functionally locked to prevent distraction. Stay in the "Now".
+- **Past-Date Security**: Editing past sessions is disabled by default but can be toggled via the **Settings override** for catch-up sessions.
+
+### 📱 Content Creation & Export
+- **LinkedIn Social Helper**: A dedicated "Copy to Social" tool that formats your notes into polished LinkedIn posts with hooks and hashtags.
+- **Timestamped Lab Journal**: Export your entire 30-day growth into a single, timestamped **Markdown file** for long-term archiving and tool-building.
+
+### 📅 Native Reminders
+- **GCal Integration**: Generates a custom `.ics` calendar file to give you native mobile and desktop notifications 15 minutes before every block starts.
 
 ---
 
 ## 🚀 How to Run
 1. Navigate to the `src` folder.
 2. Open `index.html` in any modern browser.
-3. Click "Sync to Calendar" to get automated notifications on your phone/desktop.
+3. Your data is automatically persisted in `localStorage`.
